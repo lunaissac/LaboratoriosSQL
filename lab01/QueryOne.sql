@@ -3,4 +3,6 @@ go
 
 select database_id, name 
 from sys.databases
-gogit 
+
+use AdventureVG_copia
+select name from sys.tables;
