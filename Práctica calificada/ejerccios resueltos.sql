@@ -159,10 +159,22 @@ HumanResources.Department.Name
 
 
 
+select Person.FirstName as nombre ,Person.LastName as apellido,
+   HumanResources.Department.name as departamento,
+     HumanResources.Employee.MaritalStatus as estado
+  from HumanResources.EmployeeDepartmentHistory
+  inner join Person.Person
+  on HumanResources.EmployeeDepartmentHistory.BusinessEntityID = Person.BusinessEntityID
 
+inner join HumanResources.Department
+  on HumanResources.EmployeeDepartmentHistory.DepartmentID = HumanResources.Department.DepartmentID
+
+ inner join HumanResources.Employee
+  on HumanResources.Employee.BusinessEntityID = Person.BusinessEntityID
+select * from HumanResources.Employee
 ---muestrame el listado de clientes que hicieron su orden de compra en los meses de noviembre y diciembre del año 2012---
 
 
 
 ---Muestrame  la cantidad de ordenes de pedido atendidos por cada medio de envio---
-select * from Purchasing.ShipMethod
+select * from Person.Person
